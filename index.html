@@ -7,6 +7,42 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <aside>
+            <div class="search">
+                <h2>Search for a City:</h2>
+                <input type="text" class="city-search-display">
+                <button id="search-button" class="search-button">Search</button>
+                <hr class="line"></hr>
+            </div>
+            <ul class="cities">
+            </ul>
+        </aside>
+        <main>
+            <div class="current-weather">
+                <h2>Atlanta (9/13/2022) ☀️</h2>
+                <div class="weather-detail">
+                    <div id="temperature" class="temperature-display">Temp: 63.55 °F</div>
+                    <div id="wind" class="wind-display">Wind: 3.94 MPH</div>
+                    <div id="humidity" class="humidity-display">Humidity: 63 %</div>
+                </div>
+            </div>
+            <div class="forecast">
+                <h3>5-Day Forecast:</h3>
+                <div class="forecast-grid">
+                    <div class="forecast-card">
+                        <div id="date" class="date-display">9/14/2022</div>
+                        <div id="weather-icon" class="weather-icon-display">☀️</div>
+                        <div id="temperature" class="temperature-display">Temp: 63.55 °F</div>
+                        <div id="wind" class="wind-display">Wind: 3.94 MPH</div>
+                        <div id="humidity" class="humidity-display">Humidity: 63 %</div>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
