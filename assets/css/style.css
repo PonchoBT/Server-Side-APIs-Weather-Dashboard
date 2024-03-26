@@ -29,7 +29,7 @@ main {
     padding: 0 15px 0 15px;
 }
 
-.city-search {
+.city-search-display {
     background-color: #ecf0f1;
     border: 1px solid #bdc3c7;
     color: #34495e;
@@ -39,7 +39,7 @@ main {
     margin-bottom: 10px;
 }
 
-.search-button {
+.search-button-display{
     background-color: #6991e3;
     color: #fff;
     border: none;
