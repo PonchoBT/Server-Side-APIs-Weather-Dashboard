@@ -260,30 +260,37 @@ function displayWeatherForecast(data) {
   }
 }
 
-// Function to obtain the weather icon
-function getWeatherIcon(iconCode) {
-  const icons = {
-    "01d": "☀️",
-    "01n": "🌙",
-    "02d": "⛅",
-    "02n": "⛅",
-    "03d": "🌥️",
-    "03n": "🌥️",
-    "04d": "☁️",
-    "04n": "☁️",
-    "09d": "🌧️",
-    "09n": "🌧️",
-    "10d": "🌦️",
-    "10n": "🌦️",
-    "11d": "⛈️",
-    "11n": "⛈️",
-    "13d": "🌨️",
-    "13n": "🌨️",
-    "50d": "🌫️",
-    "50n": "🌫️",
-  };
-  // Return the corresponding icon or '❓' for unknown
-  return icons[iconCode] || "❓";
+function getWeatherIcon(cityName) {
+  var apiKey = "7e61a7fccba2a2c3c75138ba3b23d2a1";
+  var apiUrl =
+    "https://api.openweathermap.org/data/2.5/weather?units=metric&q=" +
+    encodeURIComponent(cityName) +
+    "&appid=" +
+    apiKey;
+
+  // Fetch data from OpenWeatherMap API
+  fetch(apiUrl)
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error("Network response was not ok.");
+    })
+    .then(function(data) {
+      // Extract icon code from the API response
+      var iconCode = data.weather[0].icon;
+      // Use the icon code to generate the icon URL
+      var iconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+      // Now you have the icon URL, you can use it as needed
+      displayWeatherIcon(iconURL);
+    })
+    .catch(function(error) {
+      console.error("There was a problem with the fetch operation:", error);
+    });
+}
+
+function displayWeatherIcon(iconURL) {
+  weatherIconDisplay.setAttribute("src", iconURL);
 }
 
 // Call the function to get the user's location and then the weather.
