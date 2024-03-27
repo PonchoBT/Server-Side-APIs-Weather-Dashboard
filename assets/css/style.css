@@ -92,9 +92,11 @@ main {
 
 .forecast-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(213px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(234px, 1fr));
     gap: 20px;
     margin-top: 20px;
+    color: #FFF;
+    line-height: 30px;
 }
 
 .forecast-card {
@@ -123,6 +125,45 @@ main {
     line-height: 30px;
 }
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+  }
+.alert {
+  padding: 20px;
+  background-color: #09090987;
+  color: rgb(0, 0, 0);
+  margin-bottom: 15px;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+
 @media (max-width: 768px) {
     aside {
         width: 100%;
@@ -131,3 +172,4 @@ main {
         width: 100%;
     }
 }
+
